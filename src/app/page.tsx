@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Hero from "@/components/hero";
+import Nav from "@/components/nav";
 
 export default function Home() {
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function Home() {
 
   return (
     <>
+    <Nav />
       <Hero />
 
       <div className="flex flex-col md:flex-row gap-8 justify-center items-center min-h-screen bg-[#0a0f24] px-4">
