@@ -15,7 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Hero from "@/components/hero";
 import Nav from "@/components/nav";
-
+import Footer from "@/components/footer";
 export default function Home() {
   useEffect(() => {
     AOS.init({
@@ -91,7 +91,30 @@ export default function Home() {
             </p>
           </CardContent>
         </Card>
+        <div>
+           <Card
+          data-aos="fade-up"
+          data-aos-delay="300"
+          className="max-w-md w-full bg-[#0b183d] text-white shadow-2xl border border-blue-500/20 hover:border-cyan-400/40 transition-all duration-300"
+        >
+          <CardHeader>
+            <CardTitle className="text-3xl font-bold text-cyan-400">
+              Products  
+            </CardTitle>
+            <CardDescription className="text-gray-400">
+              We have products in maby domains like education , developers tools , finance and more.
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <p className="text-gray-300">
+              Our products include our main dashboard VyomaOs , Business suite like Bizkhata , student Tools like StudyMate.
+            </p>
+          </CardContent>
+        </Card>
+        </div>
       </div>
+<Footer />
     </>
   );
 }

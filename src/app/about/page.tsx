@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-
+import Nav from "@/components/nav";
 export default function About() {
   return (
+    <>  
+    <Nav />
     <div className="min-h-screen bg-[#0a0f24] text-white px-6 py-16">
       <motion.h1
         className="text-4xl font-bold text-center text-cyan-400 mb-12"
@@ -54,5 +56,6 @@ export default function About() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }
