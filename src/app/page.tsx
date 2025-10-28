@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import AOS from "aos"; // ✅ You forgot this import
 import "aos/dist/aos.css";
 
 import {
@@ -21,17 +22,18 @@ export default function Home() {
       once: true,
       easing: "ease-in-out",
     });
-  }, []); // ✅ Empty dependency array ensures it runs only once
+  }, []);
 
   return (
     <>
       <Hero />
 
-      <div
-        className="flex justify-center items-center min-h-screen bg-[#0a0f24] px-4"
-        data-aos="fade-up" // ✅ Card animation on scroll
-      >
-        <Card className="max-w-md w-full bg-[#0b183d] text-white shadow-2xl border border-blue-500/20 hover:border-cyan-400/40 transition-all duration-300">
+      <div className="flex flex-col md:flex-row gap-8 justify-center items-center min-h-screen bg-[#0a0f24] px-4">
+        {/* Vyoma OS Card */}
+        <Card
+          data-aos="fade-up"
+          className="max-w-md w-full bg-[#0b183d] text-white shadow-2xl border border-blue-500/20 hover:border-cyan-400/40 transition-all duration-300"
+        >
           <CardHeader>
             <CardTitle className="text-3xl font-bold text-cyan-400">
               Vyoma OS
@@ -51,27 +53,39 @@ export default function Home() {
           </CardContent>
 
           <CardFooter data-aos="zoom-in" data-aos-delay="200">
-            <a href="https://vyoma-os.vercel.app/" target="_blank" rel="noreferrer">
+            <a
+              href="https://vyoma-os.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button className="bg-gradient-to-r from-blue-500 to-cyan-400 hover:scale-105 transition-transform duration-300">
                 Explore Vyoma OS
               </Button>
             </a>
           </CardFooter>
         </Card>
-        <div></div>
-            <Card className="max-w-md w-full bg-[#0b183d] text-white shadow-2xl border border-blue-500/20 hover:border-cyan-400/40 transition-all duration-300">
+
+        {/* Features Card */}
+        <Card
+          data-aos="fade-up"
+          data-aos-delay="300"
+          className="max-w-md w-full bg-[#0b183d] text-white shadow-2xl border border-blue-500/20 hover:border-cyan-400/40 transition-all duration-300"
+        >
           <CardHeader>
             <CardTitle className="text-3xl font-bold text-cyan-400">
               Features
             </CardTitle>
             <CardDescription className="text-gray-400">
-              WE serve u various products like AI tools,Code editor,Design tools and many more.
+              We serve you various products like AI tools, code editors, design
+              tools, and more.
             </CardDescription>
           </CardHeader>
 
           <CardContent>
             <p className="text-gray-300">
-              We serve in eductional apps for students and teachers , developer tools for programmers , finance tools for businesses and many more .
+              We serve in educational apps for students and teachers, developer
+              tools for programmers, finance tools for businesses, and much
+              more.
             </p>
           </CardContent>
         </Card>
